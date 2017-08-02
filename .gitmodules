@@ -29,3 +29,8 @@
 [submodule "freetype2"]
 	path = freetype2
 	url = git://git.sv.nongnu.org/freetype/freetype2.git
+	branch = VER-2-8
+[submodule "opusfile"]
+	path = opusfile
+	url = https://github.com/xiph/opusfile.git
+	branch = v0.8

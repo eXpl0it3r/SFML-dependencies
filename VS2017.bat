@@ -42,6 +42,13 @@ COPY opus\win32\VS2015\x64\Release\opus.lib extlibs\libs-msvc-universal\x64\opus
 MKDIR extlibs\headers\opus
 COPY opus\include\* extlibs\headers\opus
 
+REM Opusfile
+
+COPY opusfile\win32\VS2010\Win32\Release\opusfile.lib extlibs\libs-msvc-universal\x86\opusfile.lib
+COPY opusfile\win32\VS2010\x64\Release\opusfile.lib extlibs\libs-msvc-universal\x64\opusfile.lib
+MKDIR extlibs\headers\opus
+COPY opusfile\include\* extlibs\headers\opus
+
 REM libjpeg-turbo
 
 COPY libjpeg-turbo\install\x86\lib\jpeg-static.lib extlibs\libs-msvc-universal\x86\jpeg.lib
