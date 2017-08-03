@@ -1,4 +1,4 @@
-REM ECHO off
+ECHO off
 
 MKDIR extlibs
 MKDIR extlibs\bin

@@ -18,4 +18,5 @@
 
 ## Building
 
-All the necessary steps are described on the repostory wiki.
+All the necessary steps are described on the [repository wiki](https://github.com/eXpl0it3r/SFML-dependencies/wiki).
+
