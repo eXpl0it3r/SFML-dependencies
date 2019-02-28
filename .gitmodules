@@ -14,10 +14,6 @@
 	path = opus
 	url = https://github.com/xiph/opus.git
 	branch = v1.2.1
-[submodule "libjpeg-turbo"]
-	path = libjpeg-turbo
-	url = https://github.com/libjpeg-turbo/libjpeg-turbo.git
-	branch = jpeg-8
 [submodule "openal-soft"]
 	path = openal-soft
 	url = https://github.com/kcat/openal-soft.git
