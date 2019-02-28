@@ -45,5 +45,6 @@ set(FLAC_SRC
 )
 
 add_library(FLAC ${FLAC_SRC})
-target_compile_definitions(FLAC PRIVATE "-DPACKAGE_VERSION=\"1.3.2\"" "-DHAVE_LROUND" "-DFLAC__HAS_OGG=1")
+target_compile_definitions(FLAC PRIVATE "-DPACKAGE_VERSION=\"1.3.2\"" "-DHAVE_LROUND" "-DFLAC__HAS_OGG=1" "-DHAVE_STDINT_H" "-DHAVE_INTTYPES_H")
 target_include_directories(FLAC PRIVATE flac/src/libFLAC/include flac/include ${OGG_INCLUDE_DIRS})
+target_link_libraries(FLAC ogg)
