@@ -44,13 +44,17 @@ set(FLAC_SRC
     flac/src/libFLAC/window.c
 )
 
+if (WIN32)
+    list (APPEND FLAC_SRC flac/src/share/win_utf8_io/win_utf8_io.c flac/src/libFLAC/windows_unicode_filenames.c)
+endif()
+
 add_library(FLAC ${FLAC_SRC})
-target_compile_definitions(FLAC PRIVATE "-DPACKAGE_VERSION=\"1.3.2\"" "-DHAVE_LROUND" "-DFLAC__HAS_OGG=1" "-DHAVE_STDINT_H" "-DHAVE_INTTYPES_H")
-target_include_directories(FLAC PRIVATE flac/src/libFLAC/include flac/include ${OGG_INCLUDE_DIRS})
+target_compile_definitions(FLAC PRIVATE "-DPACKAGE_VERSION=\"1.3.2\"" "-DHAVE_LROUND" "-DFLAC__HAS_OGG=0" "-DHAVE_STDINT_H" "-DHAVE_INTTYPES_H" "-DFLAC_API_EXPORTS" "-DFLAC__HAS_X86INTRIN" "-DFLAC__NO_ASM" "DLL_EXPORT")
+target_include_directories(FLAC PUBLIC flac/src/libFLAC/include flac/include PRIVATE ${OGG_INCLUDE_DIRS})
 target_link_libraries(FLAC ogg)
 
 if (BUILD_SHARED_LIBS)
-    target_compile_definitions(FLAC PRIVATE "-DFLAC_API_EXPORTS")
+    target_compile_definitions(FLAC PUBLIC "-DFLAC_API_EXPORTS")
 else()
-    target_compile_definitions(FLAC PRIVATE "-DFLAC__NO_DLL")
+    target_compile_definitions(FLAC PUBLIC "-DFLAC__NO_DLL")
 endif()
