@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.7.2)
 
 project(SFML-dependencies)
 
-# Easy ones with cmake support first
+# Disable harfbuzz for freetype
+set(WITH_HarfBuzz FALSE)
 add_subdirectory(freetype2)
+
+# No extra configuration for ogg
 add_subdirectory(ogg)
 
 # openal-soft is provided by emscripten so we don't need to build
