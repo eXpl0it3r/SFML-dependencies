@@ -13,7 +13,11 @@
 [submodule "opus"]
 	path = opus
 	url = https://github.com/xiph/opus.git
-	branch = v1.2.1
+	branch = v1.3.1
+[submodule "opusfile"]
+	path = opusfile
+	url = https://github.com/xiph/opusfile.git
+	branch = v0.12
 [submodule "openal-soft"]
 	path = openal-soft
 	url = https://github.com/kcat/openal-soft.git
@@ -24,9 +28,5 @@
 	branch = master
 [submodule "freetype2"]
 	path = freetype2
-	url = git://git.sv.nongnu.org/freetype/freetype2.git
+	url = https://gitlab.freedesktop.org/freetype/freetype.git
 	branch = VER-2-8
-[submodule "opusfile"]
-	path = opusfile
-	url = https://github.com/xiph/opusfile.git
-	branch = v0.8
