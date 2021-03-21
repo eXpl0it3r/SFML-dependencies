@@ -19,3 +19,9 @@
 
 All the necessary steps are described on the [repository wiki](https://github.com/eXpl0it3r/SFML-dependencies/wiki).
 
+## Custom Scripts
+
+Until they're fully integrated into the setup here, I've add the scripts that have been used to generate the dependency frameworks for macOS and iOS.
+
+- [macOS-dependencies.sh](macOS-dependencies.sh)
+- [iOS-dependencies.sh](iOS-dependencies.sh)
