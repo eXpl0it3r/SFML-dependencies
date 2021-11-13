@@ -81,11 +81,11 @@ cd build/1.19/universal
 
 cp ../arm64/root/lib/libopenal.1.19.1.dylib libopenal.1.19.1.dylib.arm64
 cp ../x86_64/root/lib/libopenal.1.19.1.dylib libopenal.1.19.1.dylib.x86_64
-lipo libopenal.1.19.1.dylib.arm64 libopenal.1.19.1.dylib.x86_64 -create -output libopenal.1.19.1.dylib
+lipo libopenal.1.19.1.dylib.arm64 libopenal.1.19.1.dylib.x86_64 -create -output libOpenAL.1.19.1.dylib
 
 
 cp -R ../arm64/root/ $INSTALL_ROOT
-cp libopenal.1.19.1.dylib $INSTALL_ROOT/lib
+cp libOpenAL.1.19.1.dylib $INSTALL_ROOT/lib
 rm $INSTALL_ROOT/lib/libopenal.la
 
 file $INSTALL_ROOT/lib/*
@@ -327,7 +327,7 @@ popd
 
 mkdir frameworks
 
-for lib in openal freetype FLAC ogg vorbis vorbisfile vorbisenc
+for lib in OpenAL freetype FLAC ogg vorbis vorbisfile vorbisenc
     cp $INSTALL_ROOT/lib/lib$lib.dylib frameworks/$lib.dylib
 end
 
@@ -381,19 +381,27 @@ for f in {FLAC,vorbis,vorbisfile,vorbisenc}.framework
     set lib (echo $f | sed -e 's#\(.*\)\.framework#\1#')
     set old (otool -L "$f/$lib" | grep "ogg" | awk '{ print $1 }')
     set new (rpath "ogg")
-    install_name_tool -change "$old" "$new" "$f/$lib"
+
+    for a in $old
+        echo "Running install_name_tool -change $a $new $f/$lib"
+        install_name_tool -change "$a" "$new" "$f/$lib"
+    end
 end
 
 for f in {vorbisfile,vorbisenc}.framework
     set lib (echo $f | sed -e 's#\(.*\)\.framework#\1#')
     set old (otool -L "$f/$lib" | grep "libvorbis.0.dylib" | awk '{ print $1 }')
     set new (rpath "vorbis")
-    install_name_tool -change "$old" "$new" "$f/$lib"
+
+    for a in $old
+        echo "Running install_name_tool -change $a $new $f/$lib"
+        install_name_tool -change "$a" "$new" "$f/$lib"
+    end
 end
 
 for f in *.framework
     set lib (echo $f | sed -e 's#\(.*\)\.framework#\1#')
-    echo "Printing otool -L for $lib.framework"
+    echo "Running otool -L for $lib.framework"
     otool -L "$f/$lib"
     echo
     echo
