@@ -15,7 +15,16 @@ if (NOT EMSCRIPTEN AND NOT IOS)
     set(ALSOFT_UTILS OFF CACHE BOOL "")
     set(ALSOFT_EXAMPLES OFF CACHE BOOL "")
     set(ALSOFT_TESTS OFF CACHE BOOL "")
+
     add_subdirectory(openal-soft)
+
+    # Ensure -fcommon is used
+    # - https://gcc.gnu.org/gcc-10/porting_to.html#common
+    # - https://github.com/kcat/openal-soft/issues/519
+    # - https://reviews.llvm.org/D75056
+    if (CMAKE_C_COMPILER_ID STREQUAL "Clang" OR (CMAKE_C_COMPILER_ID STREQUAL "GNU" AND CMAKE_C_COMPILER_VERSION VERSION_GREATER_EQUAL 10))
+        target_compile_options(OpenAL PRIVATE -fcommon)
+    endif()
 endif()
 
 # vorbis requires these ogg variables to be set
