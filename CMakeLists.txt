@@ -22,6 +22,7 @@ if (NOT EMSCRIPTEN AND NOT IOS)
     set(ALSOFT_UTILS OFF CACHE BOOL "")
     set(ALSOFT_EXAMPLES OFF CACHE BOOL "")
     set(ALSOFT_TESTS OFF CACHE BOOL "")
+    set(CMAKE_DISABLE_FIND_PACKAGE_WindowsSDK ON CACHE BOOL "")
 
     message(STATUS "Configuring openal-soft")
     add_subdirectory(openal-soft)
