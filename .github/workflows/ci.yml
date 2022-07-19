@@ -19,9 +19,9 @@ jobs:
         - { name: Static, flags: -DBUILD_SHARED_LIBS=FALSE }
 
         include:
-        - platform: { name: Windows VS2017, os: windows-2016   }
+        - platform: { name: Windows VS2019, os: windows-2019   }
           config: { name: Static, flags: -DBUILD_SHARED_LIBS=FALSE }
-        - platform: { name: Windows VS2019, os: windows-latest }
+        - platform: { name: Windows VS2022, os: windows-2022 }
           config: { name: Static, flags: -DBUILD_SHARED_LIBS=FALSE }
         - platform: { name: MacOS XCode, os: macos-latest }
           config: { name: iOS, flags: -DIOS_PLATFORM=SIMULATOR }
