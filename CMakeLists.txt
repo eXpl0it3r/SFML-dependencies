@@ -6,8 +6,13 @@ project(SFML-dependencies)
 set(WITH_HarfBuzz FALSE)
 add_subdirectory(freetype2)
 
-# No extra configuration for ogg
+# Don't build tests
+set(BUILD_TESTING OFF CACHE BOOL "")
 add_subdirectory(ogg)
+
+# Ensure OGG is found by Vorbis & FLAC
+set(OGG_LIBRARY $<TARGET_FILE:Ogg::ogg> CACHE BOOL "")
+set(OGG_INCLUDE_DIR $<TARGET_PROPERTY:Ogg::ogg,INCLUDE_DIRECTORIES> CACHE BOOL "")
 
 # openal-soft is provided by emscripten so we don't need to build
 # It also builds the extras by default, so disable them
@@ -27,9 +32,8 @@ if (NOT EMSCRIPTEN AND NOT IOS)
     endif()
 endif()
 
-# vorbis requires these ogg variables to be set
-set(OGG_LIBRARIES $<TARGET_FILE:ogg>) 
-set(OGG_INCLUDE_DIRS $<TARGET_PROPERTY:ogg,INCLUDE_DIRECTORIES>)
+# Don't build tests
+set(BUILD_TESTING OFF CACHE BOOL "")
 add_subdirectory(vorbis)
 
 # flac is still waiting for cmake support

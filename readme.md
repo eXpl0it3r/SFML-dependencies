@@ -6,13 +6,13 @@
 
 | Name                                                   | Version            | Repository                                             |
 |--------------------------------------------------------|--------------------|--------------------------------------------------------|
-| [ogg](http://www.vorbis.com/)                          | v1.3.3             | `https://github.com/xiph/ogg.git`                      |
-| [flac](https://xiph.org/flac/)                         | 1.3.2              | `https://github.com/xiph/flac.git`                     |
-| [vorbis](http://www.vorbis.com/)                       | v1.3.6             | `https://github.com/xiph/vorbis.git`                   |
+| [ogg](http://www.vorbis.com/)                          | v1.3.5             | `https://github.com/xiph/ogg.git`                      |
+| [flac](https://xiph.org/flac/)                         | 1.3.4              | `https://github.com/xiph/flac.git`                     |
+| [vorbis](http://www.vorbis.com/)                       | v1.3.7             | `https://github.com/xiph/vorbis.git`                   |
 | [opus](https://xiph.org/flac/)                         | v1.3.1             | `https://github.com/xiph/opus.git`                     |
 | [opusfile](https://github.com/xiph/opusfile)           | v0.12              | `https://github.com/xiph/opusfile.git`                 |
-| [freetype2](https://www.freetype.org/)                 | VER-2-8            | `https://gitlab.freedesktop.org/freetype/freetype.git` | 
-| [openal-soft](http://kcat.strangesoft.net/openal.html) | openal-soft-1.19.0 | `https://github.com/kcat/openal-soft.git`              |
+| [freetype2](https://www.freetype.org/)                 | VER-2-12-1         | `https://gitlab.freedesktop.org/freetype/freetype.git` | 
+| [openal-soft](http://kcat.strangesoft.net/openal.html) | openal-soft-1.21.0 | `https://github.com/kcat/openal-soft.git`              |
 | [stb_*](https://github.com/nothings/stb)               | master             | `https://github.com/nothings/stb.git`                  |
 
 ## Building
