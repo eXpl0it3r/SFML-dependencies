@@ -4,10 +4,12 @@ project(SFML-dependencies)
 
 # Disable harfbuzz for freetype
 set(WITH_HarfBuzz FALSE)
+message(STATUS "Configuring freetype2")
 add_subdirectory(freetype2)
 
 # Don't build tests
 set(BUILD_TESTING OFF CACHE BOOL "")
+message(STATUS "Configuring ogg")
 add_subdirectory(ogg)
 
 # Ensure OGG is found by Vorbis & FLAC
@@ -21,6 +23,7 @@ if (NOT EMSCRIPTEN AND NOT IOS)
     set(ALSOFT_EXAMPLES OFF CACHE BOOL "")
     set(ALSOFT_TESTS OFF CACHE BOOL "")
 
+    message(STATUS "Configuring openal-soft")
     add_subdirectory(openal-soft)
 
     # Ensure -fcommon is used
@@ -34,6 +37,7 @@ endif()
 
 # Don't build tests
 set(BUILD_TESTING OFF CACHE BOOL "")
+message(STATUS "Configuring vorbis")
 add_subdirectory(vorbis)
 
 # Don't build C++ library & tests
@@ -42,4 +46,5 @@ set(BUILD_PROGRAMS OFF CACHE BOOL "")
 set(BUILD_EXAMPLES OFF CACHE BOOL "")
 set(BUILD_DOCS OFF CACHE BOOL "")
 set(BUILD_TESTING OFF CACHE BOOL "")
+message(STATUS "Configuring flac")
 add_subdirectory(flac)
