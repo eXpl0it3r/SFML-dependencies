@@ -13,8 +13,8 @@ message(STATUS "Configuring ogg")
 add_subdirectory(ogg)
 
 # Ensure OGG is found by Vorbis & FLAC
-set(OGG_LIBRARY $<TARGET_FILE:Ogg::ogg> CACHE BOOL "")
-set(OGG_INCLUDE_DIR $<TARGET_PROPERTY:Ogg::ogg,INCLUDE_DIRECTORIES> CACHE BOOL "")
+set(OGG_LIBRARY $<TARGET_FILE:Ogg::ogg> CACHE STRING "")
+set(OGG_INCLUDE_DIR $<TARGET_PROPERTY:Ogg::ogg,INCLUDE_DIRECTORIES> CACHE STRING "")
 
 # openal-soft is provided by emscripten so we don't need to build
 # It also builds the extras by default, so disable them
