@@ -21,7 +21,7 @@
 [submodule "openal-soft"]
 	path = openal-soft
 	url = https://github.com/kcat/openal-soft.git
-	branch = openal-soft-1.21.0
+	branch = openal-soft-1.21.1
 [submodule "stb"]
 	path = stb
 	url = https://github.com/nothings/stb.git
