@@ -23,6 +23,8 @@ if (NOT EMSCRIPTEN AND NOT IOS)
     set(ALSOFT_EXAMPLES OFF CACHE BOOL "")
     set(ALSOFT_TESTS OFF CACHE BOOL "")
     set(CMAKE_DISABLE_FIND_PACKAGE_WindowsSDK ON CACHE BOOL "")
+    # Ensure the redistributables are compiled in for openal
+    set(FORCE_STATIC_VCRT ON)
 
     message(STATUS "Configuring openal-soft")
     add_subdirectory(openal-soft)
