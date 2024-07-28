@@ -25,6 +25,10 @@ if (NOT EMSCRIPTEN AND NOT IOS)
     set(CMAKE_DISABLE_FIND_PACKAGE_WindowsSDK ON CACHE BOOL "")
 
     message(STATUS "Configuring openal-soft")
+    # Ensure the redistributables are compiled in for openal
+    if(MSVC)
+        set(FORCE_STATIC_VCRT ON)
+    endif()
     add_subdirectory(openal-soft)
 
     # Ensure -fcommon is used
