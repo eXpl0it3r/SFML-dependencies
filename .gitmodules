@@ -30,3 +30,7 @@
 	path = freetype2
 	url = https://gitlab.freedesktop.org/freetype/freetype.git
 	branch = VER-2-12-1
+[submodule "minimp3"]
+	path = minimp3
+	url = https://github.com/lieff/minimp3.git
+	branch = master
