@@ -1,5 +1,8 @@
 # SFML Dependencies
 
+> [!IMPORTANT]
+> SFML 3 is fetching and building its dependencies on-the-fly, as such this repository is essentially obsolete.
+
 [SFML](https://www.sfml-dev.org/) has a number of different dependencies. This repository should help to rebuild all the dependencies by pulling together all the source code repositories and providing the right tools and instructions to do so.
 
 ## Dependencies
